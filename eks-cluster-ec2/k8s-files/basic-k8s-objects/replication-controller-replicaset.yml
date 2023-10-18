@@ -28,13 +28,20 @@ metadata:
   labels:
     app: myapp
     run: nginx
+    env: dev
 spec:
   # modify replicas according to your case
-  replicas: 5
+  replicas: 4
   selector:    # Required field in Replicaset
-    matchLabels:
-      run: nginx
-      app: myapp
+    matchExpressions:
+      - key: app
+        operator: In
+        values:
+          - myapp
+          - myapp2
+    # matchLabels:
+    #   run: nginx
+    #   app: myapp
   template:
     metadata:
       labels:
