@@ -24,10 +24,9 @@ kubectl get <object e.g pod, deployment, service etc ...> -A # Get all object re
 
 kubectl get all # To list all objects within the default namespace else add namespace (-n <name-of-namespace>) to list all objects within a specific namespace 
 
-
-#################################################
+####################################################
 K8s PODS
-##############################################
+####################################################
 
 kubectl run <pod-name> --image -n <image-name>
 
@@ -37,7 +36,7 @@ kubectl get pod --watch or -w  # To watch the process of pod creation
 
 kubectl describe pod <pod name> # Get the details about a pod
 
-Kubectl get pod <pod name> -o yaml # Print the manifest configueation file for the pod. This applies to every object in kubernetes.
+Kubectl get pod <pod name> -o yaml # Print the manifest configuration file for the pod. This applies to every object in kubernetes.
 
 Kubectl logs <name of pod> # To logs of a particular pod. use ctrl C to stop the process
 
@@ -47,7 +46,7 @@ kubectl delete pod <podname> # delete pod from default namespace
 
 kubectl create -f <yaml file name> # Create a new K8s resource and can only be used once for the same resource. i.e cannot be used to update the resource
 
-kubectl apply -f <yaml file name>  # used to create and manage resources created. i.e can be rerun multiple times fo the smae resources in case of future changes
+kubectl apply -f <yaml file name>  # used to create and manage resources created. i.e can be rerun multiple times for the same resources in case of future changes
 
 ##########################################
 Kubectl namespace
@@ -59,7 +58,7 @@ kubectl api-resources --namespaced=false # list resources that are not namespace
 
 kubectl api-resources --namespaced=true # list resources that are namespace bound
 
-kubectl create -f <file name> --namespace <namsepace name> #  Create a deployment object in a namepsace. Only use this if the namespace was not mentioned in the ocnfiguration/manifest file
+kubectl create -f <file name> --namespace <namespace name> #  Create a deployment object in a namespace. Only use this if the namespace was not mentioned in the ocnfiguration/manifest file
 
 Kubectl get --all --namespace <name of namespace> # To get all resources in a given namespace
 
@@ -77,7 +76,6 @@ kubectl replace -f <file name> # To update replicaset file in case you changed n
 
 kubectl scale --replicas=<number> replicaset <name of replicaset>
 
-
 ##############################################
 Deployments
 ##############################################
@@ -92,9 +90,7 @@ kubectl apply -f <file name> # To update deployment manifest file in case you ch
 
 kubectl rollout undo deploy <name of deployment> # To undo the deployment nad rollback to the previous version
 
-kubectl delete deploy <name of deployment> # delete deployment 
-
-
+kubectl delete deploy <name of deployment> # delete deployment
 
 ###########################################
 Services

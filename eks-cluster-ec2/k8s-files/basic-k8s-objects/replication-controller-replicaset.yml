@@ -31,7 +31,7 @@ metadata:
     env: dev
 spec:
   # modify replicas according to your case
-  replicas: 4
+  replicas: 5
   selector:    # Required field in Replicaset
     matchExpressions:
       - key: app
@@ -47,6 +47,7 @@ spec:
       labels:
         run: nginx
         app: myapp
+        env: dev
     spec:
       containers:
       - name: myapp
@@ -58,5 +59,4 @@ spec:
         env:
         - name: NGX_VERSION
           value: 1.16.1
-        
 
