@@ -88,7 +88,7 @@ kubectl get deployment <name of deployment> # To delete deployment
 
 kubectl apply -f <file name> # To update deployment manifest file in case you changed number of replicas
 
-kubectl rollout undo deploy <name of deployment> # To undo the deployment nad rollback to the previous version
+kubectl rollout undo deploy <name of deployment> # To undo the deployment and rollback to the previous version
 
 kubectl delete deploy <name of deployment> # delete deployment
 
